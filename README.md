@@ -12,6 +12,10 @@ Fluent 2022R2开源了PyFluent库（目前是0.11.0版本），PyFluent是PyAnsy
 
 官方PyFluent库地址：https://github.com/pyansys/pyfluent
 
+# B站脚本案例讲解视频
+
+https://www.bilibili.com/video/BV1LG4y187MK/?pop_share=1&vd_source=5865e52f51a427b75086d59f6ea7b9d6
+
 # 安装
 
 方式1：pip安装
@@ -94,7 +98,7 @@ pip install ansys-fluent-visualization
    > solver.setup.materials.fluid['air'].viscosity.option='sutherland'
    > solver.tui.define.operating_conditions.operating_pressure('101325')
    > ```
-   
+
 > 定义求解算法，压力速度耦合，开启全局伪时间，定义残差检测
    >
    > ```python
@@ -107,7 +111,7 @@ pip install ansys-fluent-visualization
    > solver.tui.solve.monitors.residual.plot("yes")
    > solver.tui.solve.monitors.residual.print("yes")
    > ```
-   
+
 > #创建一个函数。目的：创建监控文件+保存参数文件+绘图
    > #输入参数攻角AOA
    > #无返回值
@@ -120,7 +124,7 @@ pip install ansys-fluent-visualization
    > `for data in data_all:`
    >
    > ## 详情见`pyfluent_naca0012.ipynb`
-   
+
 
 
 # 运行过程（show_gui=True）
