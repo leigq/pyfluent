@@ -69,7 +69,7 @@ pip install ansys-fluent-visualization
    >
    > ```python
    > import_filename="naca0012.cas"
-   > #fluent启动界面	2d	双精度	4核	mode="solver"求解模式	show_gui=True同步显示fluent
+   > #fluent启动界面，2d双精度，4核，mode="solver"求解模式，show_gui=True同步显示fluent
    > solver = pyfluent.launch_fluent(version="2d",precision="double",
    >                                 processor_count=4,show_gui=True, mode="solver"求解模式	)
    > #读入网格
@@ -82,21 +82,20 @@ pip install ansys-fluent-visualization
    >
    > ```python
    > solver.setup.models.energy.enabled = True
-   > solver.setup.models.viscous.model='k-omega-standard'
-   > solver.setup.models.viscous.k_omega_model='sst'
+   > solver.tui.define.models.viscous.kw_sst('yes')
    > solver.setup.models.viscous.k_omega_options.kw_low_re_correction=False
    > solver.setup.models.viscous.options.viscous_heating=True
    > ```
-
-   > 定义材料：理想气体，定义操作压力
+   
+> 定义材料：理想气体，定义操作压力
    >
    > ```python
    > solver.setup.materials.fluid['air'].density.option='ideal-gas'
    > solver.setup.materials.fluid['air'].viscosity.option='sutherland'
    > solver.tui.define.operating_conditions.operating_pressure('101325')
    > ```
-
-   > 定义求解算法，压力速度耦合，开启全局伪时间，定义残差检测
+   
+> 定义求解算法，压力速度耦合，开启全局伪时间，定义残差检测
    >
    > ```python
    > solver.tui.solve.set.p_v_coupling(24) # Coupled
@@ -108,8 +107,8 @@ pip install ansys-fluent-visualization
    > solver.tui.solve.monitors.residual.plot("yes")
    > solver.tui.solve.monitors.residual.print("yes")
    > ```
-
-   > #创建一个函数。目的：创建监控文件+保存参数文件+绘图
+   
+> #创建一个函数。目的：创建监控文件+保存参数文件+绘图
    > #输入参数攻角AOA
    > #无返回值
    > `def create_report(need_aoa):`
@@ -121,12 +120,12 @@ pip install ansys-fluent-visualization
    > `for data in data_all:`
    >
    > ## 详情见`pyfluent_naca0012.ipynb`
-
    
+
 
 # 运行过程（show_gui=True）
 
-![](assets/video.gif)
+![](assets/process.gif)
 
 ## 案例求解域
 
