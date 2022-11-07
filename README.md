@@ -1,4 +1,4 @@
-# PyFluent介绍
+# 1.PyFluent介绍
 
 Fluent 2022R2开源了PyFluent库（目前是0.11.0版本），PyFluent是PyAnsys生态系统的一部分，它允许开发者在选择的Python环境中与其他PyAnsys库和外部Python库一起使用Fluent。便于开发者基于python实现fluent的自动化求解，比如：
 
@@ -12,25 +12,17 @@ Fluent 2022R2开源了PyFluent库（目前是0.11.0版本），PyFluent是PyAnsy
 
 官方PyFluent库地址：https://github.com/pyansys/pyfluent
 
-# B站脚本案例讲解视频
+# 2.B站脚本案例讲解视频
 
 https://www.bilibili.com/video/BV1LG4y187MK/?pop_share=1&vd_source=5865e52f51a427b75086d59f6ea7b9d6
 
-# 作者信息
+# 3.作者信息
 
 北京理工大学 多电飞机数据流体青年科学家工作室成员雷国强
 
 邮箱：leigq12315@163.com
 
-# 安装
-
-注： 
-
-1.PyFluent supports Fluent 2022 R2 and later.
-
-2.ansys-fluent-core包支持python 3.7 到python 3.10。
-
-3.为实现本算例还需额外安装matplotlib, numpy等基本库（推荐使用anaconda虚拟环境配置）。
+# 4.PyFluent安装
 
 方式1：pip安装
 
@@ -59,7 +51,13 @@ pip install ansys-fluent-visualization
 
 后处理模块官方文档：https://fluentvisualization.docs.pyansys.com/
 
-# 本开源脚本介绍
+> 注： 
+>
+> - PyFluent supports Fluent 2022 R2 and later
+> - ansys-fluent-core包支持python 3.7 到python 3.10
+> - 为实现本算例还需额外安装matplotlib, numpy等基本库（推荐使用anaconda虚拟环境配置）
+
+# 5.本开源脚本介绍
 
 以**Langley Research Center**的**2D NACA 0012 Airfoil Validation Case**为例，使用此脚本批处理计算同一套网格不同边界条件的流场，获取对应case的机翼表面气动力并提取目标局部区域流场数据。
 
@@ -104,16 +102,14 @@ pip install ansys-fluent-visualization
    > solver.setup.models.viscous.k_omega_options.kw_low_re_correction=False
    > solver.setup.models.viscous.options.viscous_heating=True
    > ```
-   
-> 定义材料：理想气体，定义操作压力
+   > 定义材料：理想气体，定义操作压力
    >
    > ```python
    > solver.setup.materials.fluid['air'].density.option='ideal-gas'
    > solver.setup.materials.fluid['air'].viscosity.option='sutherland'
    > solver.tui.define.operating_conditions.operating_pressure('101325')
    > ```
-
-> 定义求解算法，压力速度耦合，开启全局伪时间，定义残差检测
+   > 定义求解算法，压力速度耦合，开启全局伪时间，定义残差检测
    >
    > ```python
    > solver.tui.solve.set.p_v_coupling(24) # Coupled
@@ -125,8 +121,7 @@ pip install ansys-fluent-visualization
    > solver.tui.solve.monitors.residual.plot("yes")
    > solver.tui.solve.monitors.residual.print("yes")
    > ```
-
-> #创建一个函数。目的：创建监控文件+保存参数文件+绘图
+   > #创建一个函数。目的：创建监控文件+保存参数文件+绘图
    > #输入参数攻角AOA
    > #无返回值
    > `def create_report(need_aoa):`
@@ -141,19 +136,19 @@ pip install ansys-fluent-visualization
 
 
 
-# 运行过程（show_gui=True）
+# 6.运行过程（show_gui=True）
 
 ![](assets/process.gif)
 
-## 案例求解域
+## 6.1案例求解域
 
 ![](assets/1667547304768.png)
 
-## 目标局部流场
+## 6.2目标局部流场
 
 ![1667548670681](assets/1667548670681.png)
 
-## 生成文件
+# 7.生成文件
 
 - drag_file_aoa_xx，lift_file_aoa_xx：气动力及气动力系数计算输出文件
 - naca0012_aoa_xx.cas，naca0012_aoa_xx.dat：每个cas计算完成后的数据
