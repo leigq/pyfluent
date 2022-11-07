@@ -63,7 +63,7 @@ pip install ansys-fluent-visualization
 
 ![1667545612095](assets/1667545612095.png)
 
-5.1 data.csv参数配置文件，在此文件中添加所需变量在不同case下的参数
+## 5.1 data.csv参数配置文件，在此文件中添加所需变量在不同case下的参数
 
    ![1667546110816](assets/1667546110816.png)
 
@@ -79,7 +79,7 @@ pip install ansys-fluent-visualization
 
    wall_temperature：翼型恒温壁面温度。"-1"表示绝热壁面条件
 
-5.2 代码介绍，与原本Fluent GUI求解步骤相同。
+## 5.2 代码介绍，与原本Fluent GUI求解步骤相同。
 
    > 启动fluent，载入网格，检查有无负体积网格
    >
@@ -140,11 +140,11 @@ pip install ansys-fluent-visualization
 
 ![](assets/process.gif)
 
-6.1案例求解域
+## 6.1案例求解域
 
 ![](assets/1667547304768.png)
 
-6.2目标局部流场
+## 6.2目标局部流场
 
 ![1667548670681](assets/1667548670681.png)
 
