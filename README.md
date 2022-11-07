@@ -16,7 +16,21 @@ Fluent 2022R2开源了PyFluent库（目前是0.11.0版本），PyFluent是PyAnsy
 
 https://www.bilibili.com/video/BV1LG4y187MK/?pop_share=1&vd_source=5865e52f51a427b75086d59f6ea7b9d6
 
+# 作者信息
+
+北京理工大学 多电飞机数据流体青年科学家工作室成员雷国强
+
+邮箱：leigq12315@163.com
+
 # 安装
+
+注： 
+
+1.PyFluent supports Fluent 2022 R2 and later.
+
+2.ansys-fluent-core包支持python 3.7 到python 3.10。
+
+3.为实现本算例还需额外安装matplotlib, numpy等基本库（推荐使用anaconda虚拟环境配置）。
 
 方式1：pip安装
 
