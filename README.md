@@ -18,7 +18,7 @@ https://www.bilibili.com/video/BV1LG4y187MK/?pop_share=1&vd_source=5865e52f51a42
 
 # 3.作者信息
 
-北京理工大学 多电飞机数据流体青年科学家工作室成员雷国强
+北京理工大学 数据流体团队成员雷国强
 
 邮箱：leigq12315@163.com
 
